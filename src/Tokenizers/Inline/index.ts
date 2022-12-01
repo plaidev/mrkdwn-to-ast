@@ -1,4 +1,3 @@
-
 import Emoji from './Emoji';
 import Link from './Link';
 import Bold from './Bold';
@@ -8,12 +7,11 @@ import Code from './Code';
 import Text from './Text';
 
 export default {
-    Emoji,
-    Link,
-    Bold,
-    Italic,
-    Strikethrough,
-    Code,
-    Text,
+  Emoji,
+  Link,
+  Bold,
+  Italic,
+  Strikethrough,
+  Code,
+  Text,
 };
-

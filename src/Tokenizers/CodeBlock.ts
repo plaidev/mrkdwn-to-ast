@@ -1,34 +1,31 @@
-
 import AbstractTokenizer from './AbstractTokenizer';
 
-export default class CodeBlock extends AbstractTokenizer
-{
-    protected type = "codeBlock";
-    protected raw = '';
-    protected content = '';
+export default class CodeBlock extends AbstractTokenizer {
+  protected type = 'codeBlock';
+  protected raw = '';
+  protected content = '';
 
-    constructor(textSrc:string, lastToken:AbstractTokenizer) {
-        super(textSrc, lastToken);
-        this.capture = /^(?<!\\)\`{3}(.*?)(?<!\\)\`{3}/sg.exec(textSrc);
-    };
+  constructor(textSrc: string, lastToken: AbstractTokenizer) {
+    super(textSrc, lastToken);
+    this.capture = /^(?<!\\)\`{3}(.*?)(?<!\\)\`{3}/gs.exec(textSrc);
+  }
 
-    /**
-     * Prepare current substrings
-     */
-    prepare(){
-        this.raw = this.capture[0];
-        this.content = this.capture[0].replace(/^`+|`+$/g, '');
-    };
+  /**
+   * Prepare current substrings
+   */
+  prepare() {
+    this.raw = this.capture[0];
+    this.content = this.capture[0].replace(/^`+|`+$/g, '');
+  }
 
-    /**
-     * Rendering html elements
-     */
-    toHtml(){
-        return `<pre>${ this.content }</pre>`;
-    };
+  /**
+   * Rendering html elements
+   */
+  toHtml() {
+    return `<pre>${this.content}</pre>`;
+  }
 
-    protected _getNextSubstring(txt) {
-        return txt.replace(/^\n/g, '');
-    };
+  protected _getNextSubstring(txt) {
+    return txt.replace(/^\n/g, '');
+  }
 }
-

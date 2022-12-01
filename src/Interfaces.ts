@@ -1,7 +1,6 @@
-
-import AbstractInlineTokenizer from "./Tokenizers/Inline/AbstractInlineTokenizer";
+import AbstractInlineTokenizer from './Tokenizers/Inline/AbstractInlineTokenizer';
 
 export interface ItemInterfaces {
-    content: string;
-    tokens: AbstractInlineTokenizer[];
+  content: string;
+  tokens: AbstractInlineTokenizer[];
 }

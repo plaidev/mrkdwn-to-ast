@@ -1,9 +1,16 @@
-import { describe, expect, test } from 'vitest'
-import {SlackMarkdownConverter} from '../src/index'
+import { describe, expect, test } from 'vitest';
+import { SlackMarkdownConverter } from '../src/index';
 
-describe('Simple working test', () => {
+describe('to HTML', () => {
+  test('simple', () => {
+    const markdown = `hello\nworld`;
+    const html = new SlackMarkdownConverter(markdown).toHtml();
+    console.log(html);
+  });
 
-  test('should render correctly', () => {
-    expect(1).toBe(1)
-  })
-})
+  test('multiple breaks', () => {
+    const markdown = `1\n\n\n2`;
+    const html = new SlackMarkdownConverter(markdown).toHtml();
+    console.log(html);
+  });
+});
