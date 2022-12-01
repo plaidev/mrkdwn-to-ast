@@ -1,0 +1,28 @@
+{
+  "name": "mrkdwn-to-ast",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./dist/index.js",
+  "scripts": {
+    "prettier": "prettier --write .",
+    "build": "tsc && vite build",
+    "watch": "tsc -w",
+    "build:production": "tsc && NODE_ENV=production vite build",
+    "dev": "vite",
+    "dev:force": "vite --force",
+    "test": "vitest",
+    "pub": "npm run build && npm publish"
+  },
+  "author": "tmonoi",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.7.4",
+    "vite": "^2.9.14",
+    "vitest": "0.25.3",
+    "prettier": "^2.7.1"
+  },
+  "files": [
+    "dist"
+  ]
+}
